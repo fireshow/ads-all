@@ -1,0 +1,27 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 180.76.184.26:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+  application:
+    name: ads-gateway
+server:
+  port: 8080
+  
+  ####监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  ###info 信息配置
+info:
+  aouther: Vincent
+  email: sec1995@hotmail.com

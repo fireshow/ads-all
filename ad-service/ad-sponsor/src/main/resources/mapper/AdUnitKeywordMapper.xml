@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fireshow.sponsor.mapper.AdUnitKeywordMapper">
+  <resultMap id="BaseResultMap" type="com.fireshow.sponsor.entity.unit_condition.AdUnitKeyword">
+    <!--@mbg.generated-->
+    <!--@Table imooc_ad_data.ad_unit_keyword-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="unit_id" jdbcType="INTEGER" property="unitId" />
+    <result column="keyword" jdbcType="VARCHAR" property="keyword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, unit_id, keyword
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from imooc_ad_data.ad_unit_keyword
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from imooc_ad_data.ad_unit_keyword
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.fireshow.sponsor.entity.unit_condition.AdUnitKeyword" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into imooc_ad_data.ad_unit_keyword (unit_id, keyword)
+    values (#{unitId,jdbcType=INTEGER}, #{keyword,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.fireshow.sponsor.entity.unit_condition.AdUnitKeyword" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into imooc_ad_data.ad_unit_keyword
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="unitId != null">
+        unit_id,
+      </if>
+      <if test="keyword != null and keyword != ''">
+        keyword,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="unitId != null">
+        #{unitId,jdbcType=INTEGER},
+      </if>
+      <if test="keyword != null and keyword != ''">
+        #{keyword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.fireshow.sponsor.entity.unit_condition.AdUnitKeyword">
+    <!--@mbg.generated-->
+    update imooc_ad_data.ad_unit_keyword
+    <set>
+      <if test="unitId != null">
+        unit_id = #{unitId,jdbcType=INTEGER},
+      </if>
+      <if test="keyword != null and keyword != ''">
+        keyword = #{keyword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.fireshow.sponsor.entity.unit_condition.AdUnitKeyword">
+    <!--@mbg.generated-->
+    update imooc_ad_data.ad_unit_keyword
+    set unit_id = #{unitId,jdbcType=INTEGER},
+      keyword = #{keyword,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

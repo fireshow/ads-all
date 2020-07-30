@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fireshow.sponsor.mapper.AdUnitDistrictMapper">
+  <resultMap id="BaseResultMap" type="com.fireshow.sponsor.entity.unit_condition.AdUnitDistrict">
+    <!--@mbg.generated-->
+    <!--@Table imooc_ad_data.ad_unit_district-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="unit_id" jdbcType="INTEGER" property="unitId" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, unit_id, province, city
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from imooc_ad_data.ad_unit_district
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from imooc_ad_data.ad_unit_district
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.fireshow.sponsor.entity.unit_condition.AdUnitDistrict" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into imooc_ad_data.ad_unit_district (unit_id, province, city
+      )
+    values (#{unitId,jdbcType=INTEGER}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.fireshow.sponsor.entity.unit_condition.AdUnitDistrict" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into imooc_ad_data.ad_unit_district
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="unitId != null">
+        unit_id,
+      </if>
+      <if test="province != null and province != ''">
+        province,
+      </if>
+      <if test="city != null and city != ''">
+        city,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="unitId != null">
+        #{unitId,jdbcType=INTEGER},
+      </if>
+      <if test="province != null and province != ''">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null and city != ''">
+        #{city,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.fireshow.sponsor.entity.unit_condition.AdUnitDistrict">
+    <!--@mbg.generated-->
+    update imooc_ad_data.ad_unit_district
+    <set>
+      <if test="unitId != null">
+        unit_id = #{unitId,jdbcType=INTEGER},
+      </if>
+      <if test="province != null and province != ''">
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null and city != ''">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.fireshow.sponsor.entity.unit_condition.AdUnitDistrict">
+    <!--@mbg.generated-->
+    update imooc_ad_data.ad_unit_district
+    set unit_id = #{unitId,jdbcType=INTEGER},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

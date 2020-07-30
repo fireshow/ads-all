@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    username: root
+    password: Sec1995@
+    url: jdbc:mysql://127.0.0.1:3306?imooc_ad_data?useUnicode=true&characterEncoding=utf-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+  application:
+    name: ad-search
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 180.76.184.26:8848
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+      eager: true
+server:
+  port: 9600
+  tomcat:
+    max-connections: 1000
+    
+    
+    
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'

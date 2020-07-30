@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: ad-sponsor
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 180.76.184.26:8848
+  datasource:
+    username: root
+    password: Sec1995@
+    url: jdbc:mysql://127.0.0.1:3306?imooc_ad_data?useUnicode=true&characterEncoding=utf-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+server:
+  port: 9500
+  servlet:
+    context-path: /ad-sponsor
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
