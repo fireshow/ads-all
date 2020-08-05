@@ -1,10 +1,11 @@
 package com.fireshow.sponsor.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
 import com.fireshow.sponsor.entity.AdCreative;
 import com.fireshow.sponsor.mapper.AdCreativeMapper;
 import com.fireshow.sponsor.service.AdCreativeService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 /**
  *
  *@author Vincent(sec1995@hotmail.com)
@@ -45,7 +46,7 @@ public class AdCreativeServiceImpl implements AdCreativeService{
 
     @Override
     public int updateByPrimaryKey(AdCreative record) {
-        return adCreativeMapper.updateByPrimaryKey(record);
+        return adCreativeMapper.updateByPrimaryKeySelective(record);
     }
 
 }

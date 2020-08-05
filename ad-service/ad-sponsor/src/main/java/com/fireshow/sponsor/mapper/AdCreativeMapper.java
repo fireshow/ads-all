@@ -47,10 +47,4 @@ public interface AdCreativeMapper {
      */
     int updateByPrimaryKeySelective(AdCreative record);
 
-    /**
-     * update record
-     * @param record the updated record
-     * @return update count
-     */
-    int updateByPrimaryKey(AdCreative record);
 }

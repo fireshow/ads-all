@@ -3,7 +3,7 @@ package com.fireshow.common.annotation;
 import java.lang.annotation.*;
 
 /**
- * @author Vincent(wenzheng.shao @ hand - china.com)
+ * @author Vincent
  * @version 1.0
  * @date 2020/7/21 11:42
  **/

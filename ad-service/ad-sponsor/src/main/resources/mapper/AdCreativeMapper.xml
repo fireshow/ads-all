@@ -2,8 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.fireshow.sponsor.mapper.AdCreativeMapper">
   <resultMap id="BaseResultMap" type="com.fireshow.sponsor.entity.AdCreative">
-    <!--@mbg.generated-->
-    <!--@Table imooc_ad_data.ad_creative-->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="type" jdbcType="TINYINT" property="type" />
@@ -19,13 +17,12 @@
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    <!--@mbg.generated-->
-    id, `name`, `type`, material_type, height, width, `size`, duration, audit_status, 
+    id, `name`, `type`, material_type, height, width, `size`, duration, audit_status,
     user_id, url, create_time, update_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from imooc_ad_data.ad_creative
     where id = #{id,jdbcType=BIGINT}
@@ -37,14 +34,14 @@
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.fireshow.sponsor.entity.AdCreative" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into imooc_ad_data.ad_creative (`name`, `type`, material_type, 
-      height, width, `size`, 
-      duration, audit_status, user_id, 
+    insert into imooc_ad_data.ad_creative (`name`, `type`, material_type,
+      height, width, `size`,
+      duration, audit_status, user_id,
       url, create_time, update_time
       )
-    values (#{name,jdbcType=VARCHAR}, #{type,jdbcType=TINYINT}, #{materialType,jdbcType=TINYINT}, 
-      #{height,jdbcType=INTEGER}, #{width,jdbcType=INTEGER}, #{size,jdbcType=BIGINT}, 
-      #{duration,jdbcType=INTEGER}, #{auditStatus,jdbcType=TINYINT}, #{userId,jdbcType=BIGINT}, 
+    values (#{name,jdbcType=VARCHAR}, #{type,jdbcType=TINYINT}, #{materialType,jdbcType=TINYINT},
+      #{height,jdbcType=INTEGER}, #{width,jdbcType=INTEGER}, #{size,jdbcType=BIGINT},
+      #{duration,jdbcType=INTEGER}, #{auditStatus,jdbcType=TINYINT}, #{userId,jdbcType=BIGINT},
       #{url,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
@@ -169,23 +166,6 @@
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.fireshow.sponsor.entity.AdCreative">
-    <!--@mbg.generated-->
-    update imooc_ad_data.ad_creative
-    set `name` = #{name,jdbcType=VARCHAR},
-      `type` = #{type,jdbcType=TINYINT},
-      material_type = #{materialType,jdbcType=TINYINT},
-      height = #{height,jdbcType=INTEGER},
-      width = #{width,jdbcType=INTEGER},
-      `size` = #{size,jdbcType=BIGINT},
-      duration = #{duration,jdbcType=INTEGER},
-      audit_status = #{auditStatus,jdbcType=TINYINT},
-      user_id = #{userId,jdbcType=BIGINT},
-      url = #{url,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

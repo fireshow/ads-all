@@ -2,6 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.fireshow.sponsor.mapper.AdUserMapper">
   <resultMap id="BaseResultMap" type="com.fireshow.sponsor.entity.AdUser">
+    <!--@mbg.generated-->
+    <!--@Table imooc_ad_data.ad_user-->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="token" jdbcType="VARCHAR" property="token" />
@@ -17,17 +19,17 @@
     <!--@mbg.generated-->
     select
     <include refid="Base_Column_List" />
-    from ad_user
+    from imooc_ad_data.ad_user
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     <!--@mbg.generated-->
-    delete from ad_user
+    delete from imooc_ad_data.ad_user
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.fireshow.sponsor.entity.AdUser" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into ad_user
+    insert into imooc_ad_data.ad_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="username != null and username != ''">
         username,
@@ -65,7 +67,7 @@
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.fireshow.sponsor.entity.AdUser">
     <!--@mbg.generated-->
-    update ad_user
+    update imooc_ad_data.ad_user
     <set>
       <if test="username != null and username != ''">
         username = #{username,jdbcType=VARCHAR},
@@ -83,16 +85,6 @@
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.fireshow.sponsor.entity.AdUser">
-    <!--@mbg.generated-->
-    update ad_user
-    set username = #{username,jdbcType=VARCHAR},
-      token = #{token,jdbcType=VARCHAR},
-      user_status = #{userStatus,jdbcType=TINYINT},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

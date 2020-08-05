@@ -4,7 +4,7 @@ import com.fireshow.sponsor.entity.AdPlan;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * @author Vincent(wenzheng.shao @ hand - china.com)
+ * @author Vincent
  * @version 1.0
  * @date 2020/7/27 23:09
  **/

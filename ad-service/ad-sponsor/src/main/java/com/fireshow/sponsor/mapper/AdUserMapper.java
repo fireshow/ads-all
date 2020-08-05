@@ -5,20 +5,44 @@ import com.fireshow.sponsor.entity.AdUser;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- *
- *@author Vincent(sec1995@hotmail.com)
- *@date 2020/7/26 14:48
- *@version 1.0
+ * @author Vincent
+ * @version 1.0
+ * @date 2020/8/2 10:26
  **/
+
 @Mapper
 public interface AdUserMapper extends BaseMapper<AdUser> {
+    /**
+     * delete by primary key
+     *
+     * @param id primaryKey
+     * @return deleteCount
+     */
     int deleteByPrimaryKey(Long id);
 
+
+    /**
+     * insert record to table selective
+     *
+     * @param record the record
+     * @return insert count
+     */
     int insertSelective(AdUser record);
 
+    /**
+     * select by primary key
+     *
+     * @param id primary key
+     * @return object by primary key
+     */
     AdUser selectByPrimaryKey(Long id);
 
+    /**
+     * update record selective
+     *
+     * @param record the updated record
+     * @return update count
+     */
     int updateByPrimaryKeySelective(AdUser record);
 
-    int updateByPrimaryKey(AdUser record);
 }

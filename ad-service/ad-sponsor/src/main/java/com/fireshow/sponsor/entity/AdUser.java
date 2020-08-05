@@ -1,20 +1,27 @@
 package com.fireshow.sponsor.entity;
 
-import java.io.Serializable;
-import java.util.Date;
-
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
- *用户信息表
- *@author Vincent(sec1995@hotmail.com)
- *@date 2020/7/26 14:48
+ *
+ *@author Vincent
+ *@date 2020/8/2 10:26
  *@version 1.0
  **/
+
+/**
+ * 用户信息表
+ */
 @Data
 @Builder
 @AllArgsConstructor
@@ -44,8 +51,7 @@ public class AdUser implements Serializable {
     /**
      * 用户状态
      */
-    @TableField
-    private String userStatus;
+    private Byte userStatus;
 
     /**
      * 创建时间
@@ -58,4 +64,5 @@ public class AdUser implements Serializable {
      */
     @TableField(update = "now()")
     private Date updateTime;
+
 }

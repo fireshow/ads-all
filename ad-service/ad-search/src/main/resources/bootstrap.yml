@@ -28,3 +28,11 @@ management:
     web:
       exposure:
         include: '*'
+dubbo:
+  application:
+    name: ${spring.application.name}
+  registry:
+    address: nacos://180.76.184.26:8848
+  protocol:
+    name: dubbo
+    port: -1

@@ -1,5 +1,6 @@
 package com.fireshow.sponsor;
 
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +17,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableCircuitBreaker//断路器
 @EnableFeignClients
+@EnableDubbo(scanBasePackages="com.fireshow.common.service")
 @MapperScan("com.fireshow.sponsor.mapper")
 public class SponsorApplication {
     public static void main(String[] args) {
