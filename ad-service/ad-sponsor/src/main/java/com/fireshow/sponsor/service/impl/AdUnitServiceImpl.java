@@ -1,51 +1,39 @@
 package com.fireshow.sponsor.service.impl;
 
+import com.fireshow.common.exceptions.AdException;
+import com.fireshow.sponsor.service.IAdUnitService;
+import com.fireshow.sponsor.vo.*;
 import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import com.fireshow.sponsor.entity.AdUnit;
-import com.fireshow.sponsor.mapper.AdUnitMapper;
-import com.fireshow.sponsor.service.AdUnitService;
+
 /**
- *
- *@author Vincent(sec1995@hotmail.com)
- *@date 2020/7/27 23:09
- *@version 1.0
+ * @author Vincent(sec1995 @ hotmail.com)
+ * @version 1.0
+ * @date 2020/8/8 10:24
  **/
-
 @Service
-public class AdUnitServiceImpl implements AdUnitService{
-
-    @Resource
-    private AdUnitMapper adUnitMapper;
-
+public class AdUnitServiceImpl implements IAdUnitService {
     @Override
-    public int deleteByPrimaryKey(Long id) {
-        return adUnitMapper.deleteByPrimaryKey(id);
+    public AdUnitResponse createUnit(AdUnitRequest request) throws AdException {
+        return null;
     }
 
     @Override
-    public int insert(AdUnit record) {
-        return adUnitMapper.insert(record);
+    public AdUnitKeywordResponse createUnitKeyword(AdUnitKeywordRequest request) throws AdException {
+        return null;
     }
 
     @Override
-    public int insertSelective(AdUnit record) {
-        return adUnitMapper.insertSelective(record);
+    public AdUnitItResponse createUnitIt(AdUnitItRequest request) throws AdException {
+        return null;
     }
 
     @Override
-    public AdUnit selectByPrimaryKey(Long id) {
-        return adUnitMapper.selectByPrimaryKey(id);
+    public AdUnitDistrictResponse createUnitDistrict(AdUnitDistrictRequest request) throws AdException {
+        return null;
     }
 
     @Override
-    public int updateByPrimaryKeySelective(AdUnit record) {
-        return adUnitMapper.updateByPrimaryKeySelective(record);
+    public CreativeUnitResponse createCreativeUnit(CreativeUnitRequest request) throws AdException {
+        return null;
     }
-
-    @Override
-    public int updateByPrimaryKey(AdUnit record) {
-        return adUnitMapper.updateByPrimaryKey(record);
-    }
-
 }

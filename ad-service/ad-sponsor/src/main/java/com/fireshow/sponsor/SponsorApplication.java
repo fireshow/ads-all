@@ -17,7 +17,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableCircuitBreaker//断路器
 @EnableFeignClients
-@EnableDubbo(scanBasePackages="com.fireshow.common.service")
+@EnableDubbo
 @MapperScan("com.fireshow.sponsor.mapper")
 public class SponsorApplication {
     public static void main(String[] args) {

@@ -1,4 +1,8 @@
 spring:
+  security:
+    user:
+      name: root
+      password: vincent.shao
   cloud:
     nacos:
       discovery:
@@ -10,7 +14,7 @@ spring:
   application:
     name: ads-gateway
 server:
-  port: 8080
+  port: 80
   
   ####监控
 management:

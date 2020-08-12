@@ -1,9 +1,9 @@
 package com.fireshow.sponsor.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.imooc.ad.service.ICreativeService;
-import com.imooc.ad.vo.CreativeRequest;
-import com.imooc.ad.vo.CreativeResponse;
+import com.fireshow.sponsor.service.ICreativeService;
+import com.fireshow.sponsor.vo.CreativeRequest;
+import com.fireshow.sponsor.vo.CreativeResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,13 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 public class CreativeOPController {
-
-    private final ICreativeService creativeService;
-
     @Autowired
-    public CreativeOPController(ICreativeService creativeService) {
-        this.creativeService = creativeService;
-    }
+    private  ICreativeService creativeService;
 
     @PostMapping("/create/creative")
     public CreativeResponse createCreative(

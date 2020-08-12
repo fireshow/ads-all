@@ -1,7 +1,10 @@
 package com.fireshow.sponsor.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.fireshow.sponsor.entity.AdPlan;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * @author Vincent
@@ -10,7 +13,7 @@ import org.apache.ibatis.annotations.Mapper;
  **/
 
 @Mapper
-public interface AdPlanMapper {
+public interface AdPlanMapper  extends BaseMapper<AdPlan> {
     /**
      * delete by primary key
      *
@@ -18,14 +21,6 @@ public interface AdPlanMapper {
      * @return deleteCount
      */
     int deleteByPrimaryKey(Long id);
-
-    /**
-     * insert record to table
-     *
-     * @param record the record
-     * @return insert count
-     */
-    int insert(AdPlan record);
 
     /**
      * insert record to table selective
@@ -58,4 +53,8 @@ public interface AdPlanMapper {
      * @return update count
      */
     int updateByPrimaryKey(AdPlan record);
+
+    AdPlan findByIdAndUserId(Long id, Long userId);
+
+    List<AdPlan> findAllByIdInAndUserId(List<Long> ids, Long userId);
 }

@@ -1,51 +1,59 @@
 package com.fireshow.sponsor.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
+import com.fireshow.common.exceptions.AdException;
 import com.fireshow.sponsor.entity.AdPlan;
-import com.fireshow.sponsor.mapper.AdPlanMapper;
-import com.fireshow.sponsor.service.AdPlanService;
+import com.fireshow.sponsor.service.IAdPlanService;
+import com.fireshow.sponsor.vo.AdPlanGetRequest;
+import com.fireshow.sponsor.vo.AdPlanRequest;
+import com.fireshow.sponsor.vo.AdPlanResponse;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 /**
- *
- *@author Vincent(sec1995@hotmail.com)
- *@date 2020/7/27 23:09
- *@version 1.0
+ * @author Vincent(sec1995 @ hotmail.com)
+ * @version 1.0
+ * @date 2020/8/8 10:23
  **/
-
 @Service
-public class AdPlanServiceImpl implements AdPlanService{
-
-    @Resource
-    private AdPlanMapper adPlanMapper;
-
+public class AdPlanServiceImpl implements IAdPlanService {
+    /**
+     * <h2>创建推广计划</h2>
+     *
+     * @param request
+     */
     @Override
-    public int deleteByPrimaryKey(Long id) {
-        return adPlanMapper.deleteByPrimaryKey(id);
+    public AdPlanResponse createAdPlan(AdPlanRequest request) throws AdException {
+        return null;
     }
 
+    /**
+     * <h2>获取推广计划</h2>
+     *
+     * @param request
+     */
     @Override
-    public int insert(AdPlan record) {
-        return adPlanMapper.insert(record);
+    public List<AdPlan> getAdPlanByIds(AdPlanGetRequest request) throws AdException {
+        return null;
     }
 
+    /**
+     * <h2>更新推广计划</h2>
+     *
+     * @param request
+     */
     @Override
-    public int insertSelective(AdPlan record) {
-        return adPlanMapper.insertSelective(record);
+    public AdPlanResponse updateAdPlan(AdPlanRequest request) throws AdException {
+        return null;
     }
 
+    /**
+     * <h2>删除推广计划</h2>
+     *
+     * @param request
+     */
     @Override
-    public AdPlan selectByPrimaryKey(Long id) {
-        return adPlanMapper.selectByPrimaryKey(id);
-    }
+    public void deleteAdPlan(AdPlanRequest request) throws AdException {
 
-    @Override
-    public int updateByPrimaryKeySelective(AdPlan record) {
-        return adPlanMapper.updateByPrimaryKeySelective(record);
     }
-
-    @Override
-    public int updateByPrimaryKey(AdPlan record) {
-        return adPlanMapper.updateByPrimaryKey(record);
-    }
-
 }

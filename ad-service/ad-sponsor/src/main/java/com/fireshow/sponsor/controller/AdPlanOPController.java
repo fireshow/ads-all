@@ -1,12 +1,12 @@
 package com.fireshow.sponsor.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.imooc.ad.entity.AdPlan;
-import com.imooc.ad.exception.AdException;
-import com.imooc.ad.service.IAdPlanService;
-import com.imooc.ad.vo.AdPlanGetRequest;
-import com.imooc.ad.vo.AdPlanRequest;
-import com.imooc.ad.vo.AdPlanResponse;
+import com.fireshow.common.exceptions.AdException;
+import com.fireshow.sponsor.entity.AdPlan;
+import com.fireshow.sponsor.service.IAdPlanService;
+import com.fireshow.sponsor.vo.AdPlanGetRequest;
+import com.fireshow.sponsor.vo.AdPlanRequest;
+import com.fireshow.sponsor.vo.AdPlanResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,13 +19,10 @@ import java.util.List;
 @Slf4j
 @RestController
 public class AdPlanOPController {
-
-    private final IAdPlanService adPlanService;
-
     @Autowired
-    public AdPlanOPController(IAdPlanService adPlanService) {
-        this.adPlanService = adPlanService;
-    }
+    private  IAdPlanService adPlanService;
+
+
 
     @PostMapping("/create/adPlan")
     public AdPlanResponse createAdPlan(

@@ -2,6 +2,10 @@ spring:
   application:
     name: ad-sponsor
   cloud:
+    sentinel:
+      eager: true
+      transport:
+        dashboard: 127.0.0.1:8080
     nacos:
       discovery:
         server-addr: 180.76.184.26:8848

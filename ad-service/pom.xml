@@ -41,6 +41,11 @@
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-extension</artifactId>
+        </dependency>
+
         <!--spring-boot-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

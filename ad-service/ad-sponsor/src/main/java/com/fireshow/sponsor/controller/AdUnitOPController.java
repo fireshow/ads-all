@@ -1,9 +1,9 @@
 package com.fireshow.sponsor.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.imooc.ad.exception.AdException;
-import com.imooc.ad.service.IAdUnitService;
-import com.imooc.ad.vo.*;
+import com.fireshow.common.exceptions.AdException;
+import com.fireshow.sponsor.service.IAdUnitService;
+import com.fireshow.sponsor.vo.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,13 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 public class AdUnitOPController {
-
-    private final IAdUnitService adUnitService;
-
     @Autowired
-    public AdUnitOPController(IAdUnitService adUnitService) {
-        this.adUnitService = adUnitService;
-    }
+    private  IAdUnitService adUnitService;
+
+
 
     @PostMapping("/create/adUnit")
     public AdUnitResponse createUnit(

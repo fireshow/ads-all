@@ -1,7 +1,7 @@
 package com.fireshow.sponsor.vo;
 
-import com.imooc.ad.constant.CommonStatus;
-import com.imooc.ad.entity.Creative;
+import com.fireshow.common.constant.CommonStatus;
+import com.fireshow.sponsor.entity.AdCreative;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,17 +26,17 @@ public class CreativeRequest {
     private Long userId;
     private String url;
 
-    public Creative convertToEntity() {
+    public AdCreative convertToEntity() {
 
-        Creative creative = new Creative();
+        AdCreative creative = new AdCreative();
         creative.setName(name);
-        creative.setType(type);
-        creative.setMaterialType(materialType);
+        creative.setType(String.valueOf(type));
+        creative.setMaterialType(String.valueOf(materialType));
         creative.setHeight(height);
         creative.setWidth(width);
         creative.setSize(size);
         creative.setDuration(duration);
-        creative.setAuditStatus(CommonStatus.VALID.getStatus());
+        creative.setAuditStatus(CommonStatus.VALID.getStatus().toString());
         creative.setUserId(userId);
         creative.setUrl(url);
         creative.setCreateTime(new Date());
