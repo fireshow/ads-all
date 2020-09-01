@@ -4,7 +4,6 @@ import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
@@ -15,7 +14,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  **/
 @EnableDiscoveryClient
 @SpringBootApplication
-@EnableCircuitBreaker//断路器
 @EnableFeignClients
 @EnableDubbo
 @MapperScan("com.fireshow.sponsor.mapper")

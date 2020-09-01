@@ -28,10 +28,13 @@ management:
       exposure:
         include: '*'
 dubbo:
+  cloud:
+    subscribed-services: ''
   application:
-    name: ${spring.application.name}
+    name: ad-sponsor
   registry:
     address: nacos://180.76.184.26:8848
   protocol:
     name: dubbo
     port: -1
+    id: dubbo

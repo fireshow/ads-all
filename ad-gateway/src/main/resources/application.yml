@@ -2,7 +2,7 @@ spring:
   security:
     user:
       name: root
-      password: vincent.shao
+      password: 123456
   cloud:
     nacos:
       discovery:
@@ -12,7 +12,7 @@ spring:
         locator:
           enabled: true
   application:
-    name: ads-gateway
+    name: ad-gateway
 server:
   port: 80
   

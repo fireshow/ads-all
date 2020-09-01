@@ -30,9 +30,12 @@ management:
         include: '*'
 dubbo:
   application:
-    name: ${spring.application.name}
+    name: ad-search
   registry:
     address: nacos://180.76.184.26:8848
+    subscribe: true
   protocol:
     name: dubbo
     port: -1
+  cloud:
+    subscribed-services: 'HelloService'

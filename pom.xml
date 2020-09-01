@@ -4,9 +4,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>pom</packaging>
 	<modules>
-		<module>ads-gateway</module>
+		<module>ad-gateway</module>
         <module>ad-service</module>
-		<module>ads-common</module>
+		<module>ad-common</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -21,6 +21,11 @@
 	<description>Ads project for Spring Cloud Alibaba</description>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<user.agent.version>1.20</user.agent.version>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Hoxton.SR6</spring-cloud.version>
 		<spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
@@ -57,7 +62,10 @@
 			<artifactId>commons-lang</artifactId>
 			<version>2.6</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
@@ -85,6 +93,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

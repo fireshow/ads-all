@@ -4,7 +4,7 @@ import com.fireshow.common.constant.ErrorMsg;
 import com.fireshow.common.exceptions.AdException;
 import com.fireshow.common.vo.CommonResponse;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
